@@ -1,0 +1,217 @@
+$primary-color: #a2bfd5;
+$Shade-of-grayish-blue : #483d63;
+$Medium-blue-gray-shade: #557A95;
+$Light-taupe : #B1A296;
+$narvik :#EAE7DD;
+$pale-blue: #EFFAFD;
+$light-beige: #FDF8F0;
+
+body{
+	margin: 0 ;
+	padding: 0;
+
+}
+
+.price-table {
+	max-width: 1460px;
+	width: 80%;
+	margin: 0 auto;
+	padding: 20px;
+
+	.toggle {
+		text-align:center;
+		font-size: 20px;
+
+		label {
+			position: relative;
+			display: inline-block;
+			width: 60px;
+			height: 34px;
+
+
+			input {
+				display: none;
+
+				&:checked+.slider {
+					background-color: $Light-taupe; //цвет фона кнопки выкл
+				}
+
+				&:checked+.slider:before {
+					transform: translateX(26px);
+				}
+			}
+
+			.slider {
+				position: absolute;
+				cursor: pointer;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-color: $Medium-blue-gray-shade; // слайдер вкл задний фон 
+				transition: 0.4s;
+				border-radius: 34px;
+				&:before {
+					position: absolute;
+					content: "";
+					height: 26px;
+					width: 26px;
+					left: 4px;
+					bottom: 4px;
+					background-color: $pale-blue; //круг на чекбоксе
+					transition: 0.4s;
+					border-radius: 50%;
+				}
+			}
+		}
+	}
+
+	table {
+		width: 100%;
+		border-collapse: collapse;
+		border: 1px solid $Medium-blue-gray-shade; //вокруг таблици
+		font-size: 16px;
+
+		th,
+		td {
+			padding: 10px 0;
+			text-align: center;
+			border: 1px solid $Light-taupe; //бордер между таблицами
+		}
+
+		th {
+			background-color: $primary-color;
+			color: $Shade-of-grayish-blue; // цвет базовый стандарт пркмиум 
+		}
+
+		tr:nth-child(odd) {
+			background-color: $pale-blue; //задний фон функций
+		}
+
+		.plan-name {
+			font-size: 20px;
+			font-weight: bold;
+		}
+
+		.price {
+			font-size: 24px;
+			color: $primary-color;
+		}
+
+		.features {
+			ul {
+				list-style: none;
+				padding: 0;
+
+				li {
+					margin: 10px 0;
+				}
+			}
+
+			.available {
+				font-size: 18px;
+				font-weight: 500;
+				color: $Shade-of-grayish-blue; //входит в тариф
+			}
+
+			.unavailable {
+				font-size: 18px;
+				color: $primary-color; //не входит в тариф
+			}
+		}
+
+		.register-button {
+			
+			background-color: $primary-color;
+			color: $Shade-of-grayish-blue; //текст кнопки
+			padding: 10px 20px;
+			margin: 10px auto;
+			font-size: 16px;
+			border: none;
+			border-radius: 8px;
+			cursor: pointer;
+			transition: background-color 0.3s;
+			&:hover {
+				
+				background-color: $narvik; //ховер кнопки
+				
+			}
+		}
+	}
+}
+
+.table-mobile {
+	max-width: 300px;
+	margin: 15px auto;
+
+}
+
+.monthly-price,
+.yearly-price {
+	background-color: $light-beige; // фон за ценой
+}
+
+@media (max-width: 768px) {
+	.price-table {
+		width: 100%;
+		table {
+			th,
+			td,
+			td.monthly-price,
+			td.yearly-price {
+				display: block;
+				width: 100%;
+			}
+			tr {
+				margin-bottom: 20px;
+			}
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.price-table {
+		width: 100%;
+		padding:0px;
+
+		table {
+
+			tr {
+				margin-bottom: 20px;
+			}
+
+			td.monthly-price,
+			td.yearly-price {
+				font-size: 26px;
+			}
+		}
+	}
+}
+
+@media (min-width: 1025px) {
+	.price-table {
+width: 100%;
+padding:0px;
+
+		table {
+			
+			th,
+			td {
+				display: table-cell;
+
+			}
+
+			td.monthly-price,
+			td.yearly-price {
+				font-size: 26px;
+			}
+
+			.features {
+				ul {
+					display: inline-block;
+				}
+			}
+		}
+	}
+
+}

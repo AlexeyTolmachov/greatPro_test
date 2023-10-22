@@ -1,16 +1,179 @@
-<!-- index.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="styles.css">
-	<title>Pricing Comparison Table</title>
+	<link rel="stylesheet" href="style.css">
+	<title>Сравнение цен</title>
 </head>
 
 <body>
-
+	<div class="price-table">
+		<div class="toggle">
+			<label>
+				<input type="checkbox" id="toggle-switch">
+				<span class="slider"></span>
+			</label>
+			<p id="toggle-label">Ежемесячно</p>
+		</div>
+		<table class="table-mobile">
+			<thead>
+				<tr>
+					<th class="plan-name">Базовый</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="monthly-price">$9.99/месяц</td>
+				</tr>
+				<tr>
+					<td class="yearly-price">$99.99/год</td>
+				</tr>
+				<tr>
+					<td class="features">
+						<ul>
+							<li class="available">Функция 50%</li>
+							<li class="unavailable">Функция ✘</li>
+							<li class="available"> Функция 100</li>
+							<li class="unavailable">Функция ✘</li>
+							<li class="available">Функция  ✓</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td><button class="register-button">Зарегистрироваться</button></td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="table-mobile">
+			<thead>
+				<tr>
+					<th class="plan-name">Стандартный</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="monthly-price">$19.99/месяц</td>
+				</tr>
+				<tr>
+					<td class="yearly-price">$199.99/год</td>
+				</tr>
+				<tr>
+					<td class="features">
+						<ul>
+							<li class="available">Функция 70%</li>
+							<li class="unavailable">Функция ✘</li>
+							<li class="available">Функция 500</li>
+							<li class="available">Функция ✓</li>
+							<li class="available">Функция ✓</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td><button class="register-button">Зарегистрироваться</button></td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="table-mobile">
+			<thead>
+				<tr>
+					<th class="plan-name">Премиум</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="monthly-price">$29.99/месяц</td>
+				</tr>
+				<tr>
+					<td class="yearly-price">$299.99/год</td>
+				</tr>
+				<tr>
+					<td class="features">
+						<ul>
+							<li class="available">Функция 100%</li>
+							<li class="available">Функция ✓</li>
+							<li class="available">Функция 1000</li>
+							<li class="available">Функция  ✓</li>
+							<li class="available">Функция  ✓</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td><button class="register-button">Зарегистрироваться</button></td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="table">
+			<thead>
+				<tr>
+					<th></th>
+					<th class="plan-name">Базовый</th>
+					<th class="plan-name">Стандартный</th>
+					<th class="plan-name">Премиум</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="monthly-price">Цена</td>
+					<td class="monthly-price">$9.99/месяц</td>
+					<td class="monthly-price">$19.99/месяц</td>
+					<td class="monthly-price">$29.99/месяц</td>
+				</tr>
+				<tr>
+					<td class="yearly-price">Цена</td>
+					<td class="yearly-price">$99.99/год</td>
+					<td class="yearly-price">$199.99/год</td>
+					<td class="yearly-price">$299.99/год</td>
+				</tr>
+				<tr>
+					<td class="features">
+						<ul>
+							<li class="available">Функция 1</li>
+							<li class="available">Функция 2</li>
+							<li class="available">Функция 3</li>
+							<li class="available">Функция 4</li>
+							<li class="available">Функция 5</li>
+						</ul>
+					</td>
+					<td class="features">
+						<ul>
+							<li class="available">50%</li>
+							<li class="unavailable">✘</li>
+							<li class="available">100</li>
+							<li class="unavailable">✘</li>
+							<li class="available">✓</li>
+						</ul>
+					</td>
+					<td class="features">
+						<ul>
+							<li class="available">70%</li>
+							<li class="unavailable">✘</li>
+							<li class="available">500</li>
+							<li class="available">✓</li>
+							<li class="available">✓</li>
+						</ul>
+					</td>
+					<td class="features">
+						<ul>
+							<li class="available">100%</li>
+							<li class="available">✓</li>
+							<li class="available">1000</li>
+							<li class="available">✓</li>
+							<li class="available">✓</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><button class="register-button">Зарегистрироваться</button></td>
+					<td><button class="register-button">Зарегистрироваться</button></td>
+					<td><button class="register-button">Зарегистрироваться</button></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script src="script.js"></script>
 </body>
 
 </html>
