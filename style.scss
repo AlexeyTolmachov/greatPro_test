@@ -1,15 +1,30 @@
 $primary-color: #a2bfd5;
-$Shade-of-grayish-blue : #483d63;
+$Shade-of-grayish-blue: #483d63;
 $Medium-blue-gray-shade: #557A95;
-$Light-taupe : #B1A296;
-$narvik :#EAE7DD;
+$Light-taupe: #B1A296;
+$narvik: #EAE7DD;
 $pale-blue: #EFFAFD;
 $light-beige: #FDF8F0;
 
-body{
-	margin: 0 ;
-	padding: 0;
+@mixin button-styles($bg-color, $text-color) {
+	display: inline-block;
+	padding: 10px 20px;
+	font-size: 16px;
+	background-color: $bg-color;
+	color: $text-color;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background-color 0.3s;
 
+	&:hover {
+		background-color: $narvik;
+	}
+}
+
+body {
+	margin: 0;
+	padding: 0;
 }
 
 .price-table {
@@ -19,7 +34,7 @@ body{
 	padding: 20px;
 
 	.toggle {
-		text-align:center;
+		text-align: center;
 		font-size: 20px;
 
 		label {
@@ -28,12 +43,11 @@ body{
 			width: 60px;
 			height: 34px;
 
-
 			input {
 				display: none;
 
 				&:checked+.slider {
-					background-color: $Light-taupe; //цвет фона кнопки выкл
+					background-color: $Light-taupe;
 				}
 
 				&:checked+.slider:before {
@@ -48,9 +62,10 @@ body{
 				left: 0;
 				right: 0;
 				bottom: 0;
-				background-color: $Medium-blue-gray-shade; // слайдер вкл задний фон 
+				background-color: $Medium-blue-gray-shade;
 				transition: 0.4s;
 				border-radius: 34px;
+
 				&:before {
 					position: absolute;
 					content: "";
@@ -58,7 +73,7 @@ body{
 					width: 26px;
 					left: 4px;
 					bottom: 4px;
-					background-color: $pale-blue; //круг на чекбоксе
+					background-color: $pale-blue;
 					transition: 0.4s;
 					border-radius: 50%;
 				}
@@ -69,23 +84,23 @@ body{
 	table {
 		width: 100%;
 		border-collapse: collapse;
-		border: 1px solid $Medium-blue-gray-shade; //вокруг таблици
+		border: 1px solid $Medium-blue-gray-shade;
 		font-size: 16px;
 
 		th,
 		td {
 			padding: 10px 0;
 			text-align: center;
-			border: 1px solid $Light-taupe; //бордер между таблицами
+			border: 1px solid $Light-taupe;
 		}
 
 		th {
 			background-color: $primary-color;
-			color: $Shade-of-grayish-blue; // цвет базовый стандарт пркмиум 
+			color: $Shade-of-grayish-blue;
 		}
 
 		tr:nth-child(odd) {
-			background-color: $pale-blue; //задний фон функций
+			background-color: $pale-blue;
 		}
 
 		.plan-name {
@@ -111,31 +126,17 @@ body{
 			.available {
 				font-size: 18px;
 				font-weight: 500;
-				color: $Shade-of-grayish-blue; //входит в тариф
+				color: $Shade-of-grayish-blue;
 			}
 
 			.unavailable {
 				font-size: 18px;
-				color: $primary-color; //не входит в тариф
+				color: $primary-color;
 			}
 		}
 
 		.register-button {
-			
-			background-color: $primary-color;
-			color: $Shade-of-grayish-blue; //текст кнопки
-			padding: 10px 20px;
-			margin: 10px auto;
-			font-size: 16px;
-			border: none;
-			border-radius: 8px;
-			cursor: pointer;
-			transition: background-color 0.3s;
-			&:hover {
-				
-				background-color: $narvik; //ховер кнопки
-				
-			}
+			@include button-styles($primary-color, $Shade-of-grayish-blue);
 		}
 	}
 }
@@ -144,24 +145,24 @@ body{
 	max-width: 300px;
 	margin: 15px auto;
 
-}
-
-.monthly-price,
-.yearly-price {
-	background-color: $light-beige; // фон за ценой
+	.monthly-price,
+	.yearly-price {
+		background-color: $light-beige;
+	}
 }
 
 @media (max-width: 768px) {
 	.price-table {
 		width: 100%;
+
 		table {
+
 			th,
-			td,
-			td.monthly-price,
-			td.yearly-price {
+			td {
 				display: block;
 				width: 100%;
 			}
+
 			tr {
 				margin-bottom: 20px;
 			}
@@ -172,16 +173,11 @@ body{
 @media (max-width: 1024px) {
 	.price-table {
 		width: 100%;
-		padding:0px;
+		padding: 0;
 
 		table {
-
-			tr {
-				margin-bottom: 20px;
-			}
-
-			td.monthly-price,
-			td.yearly-price {
+			.monthly-price,
+			.yearly-price {
 				font-size: 26px;
 			}
 		}
@@ -190,19 +186,17 @@ body{
 
 @media (min-width: 1025px) {
 	.price-table {
-width: 100%;
-padding:0px;
+		width: 100%;
+		padding: 0;
 
 		table {
-			
 			th,
 			td {
 				display: table-cell;
-
 			}
-
-			td.monthly-price,
-			td.yearly-price {
+			
+			.monthly-price,
+			.yearly-price {
 				font-size: 26px;
 			}
 
@@ -213,5 +207,4 @@ padding:0px;
 			}
 		}
 	}
-
 }
